@@ -17,32 +17,33 @@ namespace PicoCRMx.Objects.ViewModel
         {
 
         }
+        
         [ObservableProperty]
         public string username;
         [ObservableProperty]
         public string password;
 
+     
+
+
         [RelayCommand]
         async Task DoLogIn()
         {
-
-          
             try
             {
                 if (username is not null )
                 {
+                 
                     var result = await authService.GetContactByID(username);
-
+                 
                     if (result is not null )
 
                     {
-                        
-                        await Shell.Current.DisplayAlert($"Welcome {result.properties.firstname} {result.properties.lastname}", "Duplicate ID", "Cancel");
 
+                        await Shell.Current.DisplayAlert($"Dear {result.properties.firstname} {result.properties.lastname} A Verfication Code Was Send To Your Phone", "OTP Sent", "ok");
                     }
 
                     else
-
                     {
                         await Shell.Current.DisplayAlert("Validation Error", "The UserName you are entering is not valid", "Cancel");
                     }
@@ -63,6 +64,15 @@ namespace PicoCRMx.Objects.ViewModel
                 
 
             }
+        }
+
+      
+        int GenerateOTP()
+       
+        {
+            Random random = new Random();
+         
+            return   random.Next(125202, 999999);
         }
     }
 }

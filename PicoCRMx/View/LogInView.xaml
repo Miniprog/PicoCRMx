@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:PicoCRMx"
              xmlns:viewmodel="clr-namespace:PicoCRMx.Objects.ViewModel"
              x:DataType="viewmodel:AuthViewModel"
+             Loaded="ContentPage_Loaded"
              Title="LogInView">
     <VerticalStackLayout>
         <Entry 
@@ -12,5 +13,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button Command="{Binding DoLogInCommand}" Text="LogIn" />
+
+
     </VerticalStackLayout>
 </ContentPage>
