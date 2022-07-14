@@ -19,8 +19,8 @@ jobs:
         dotnet-version: 6.0.x
     - name: Install MAUI Workloads
       run: dotnet workload  install maui-android
-    - name: Install .Net maui IOS 
-      run: dotnet workload install maui-ios
+    - name: Install .Net maui Windows
+      run: dotnet workload install maui-windows
     - name: Restore dependencies
       run: dotnet restore
   
