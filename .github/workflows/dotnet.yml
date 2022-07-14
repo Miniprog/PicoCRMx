@@ -25,5 +25,4 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     
     - name: Install MAUI Workloads
-      run: dotnet workload install ios --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      run: dotnet workload restore
